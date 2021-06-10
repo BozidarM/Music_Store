@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+  <div>
+      <a routerLink="/">MusicStore</a>
+  </div>
+
+  <!-- https://github.com/angular/flex-layout/wiki/Responsive-API -->
+
+  <div fxFlex fxLayoutAlign="end" fxLayoutGap="25px">
+      <a routerLink="/products">Products</a>
+      <a routerLink="/insert_products">Insert Products</a>
+      <a routerLink="/myproducts">My Products</a>
+      <a routerLink="/cart">Cart</a>
+      <a routerLink="/profile">Profile</a>
+      <a *ngIf="!isloged" routerLink="/signup">SignUp</a>
+      <a *ngIf="!isloged" routerLink="/login">LogIn</a>
+      <a *ngIf="isloged" routerLink="/login">LogOut</a>
+  </div>
+
+</mat-toolbar>
+<router-outlet></router-outlet>

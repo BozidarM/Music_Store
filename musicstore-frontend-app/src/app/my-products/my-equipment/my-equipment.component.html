@@ -1,0 +1,26 @@
+<div fxFlex fxLayout="column" fxLayoutAlign="center center">
+    <section fxFlex fxLayout="row wrap" fxLayoutAlign="center" id="main_section">
+        <mat-card fxFlex="500px" *ngFor="let equipment of data">
+            <img mat-card-image src="{{equipment.image}}" alt="Photo" width="200px" height="400px">
+
+            <mat-card-title fxLayoutAlign="center">
+                {{equipment.name}}
+            </mat-card-title>
+
+            <mat-card-content fxLayoutAlign="center">
+            <h3>Price: {{equipment.price}} Euro</h3>
+            </mat-card-content>
+
+            <mat-card-content fxLayoutAlign="center">
+                <p>Seller: {{equipment.seller_username}}</p>
+            </mat-card-content>
+
+            <mat-card-actions fxLayoutAlign="center">
+                <button mat-raised-button color="warn" (click)="deleteEquipment(equipment.id)">Delete</button>
+                <button mat-raised-button color="primary" (click)="updateEquipment(equipment.id)">Update</button>
+            </mat-card-actions>
+        </mat-card>
+    </section>
+</div>
+
+

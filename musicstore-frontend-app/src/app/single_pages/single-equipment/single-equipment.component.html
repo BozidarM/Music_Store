@@ -1,0 +1,15 @@
+<div fxFlex fxLayout="row wrap" fxLayoutAlign="center" class="divWrapper">
+
+    <div fxFlex fxLayoutAlign="center center">
+        <img src="{{data.image}}" alt="Photo" height="700px">
+    </div>
+    <div fxFlex fxLayout="column" fxLayoutAlign="center">
+        <h1>{{data.name}}</h1>
+        <p>Equipment: {{data.equipment}}</p>
+        <p>Manufacturer: {{data.manufacturer}}</p>
+        <h2>Price: {{data.price}} Euro</h2>
+        <button mat-raised-button color="primary" (click)="addToCart(data)">Add to cart</button>
+        <p><b>Description:</b> {{data.description}}</p>
+    </div>
+</div>
+

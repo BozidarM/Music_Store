@@ -1,0 +1,29 @@
+<div fxFlex fxLayout="column" fxLayoutAlign="center center">
+    <section fxFlex fxLayout="row wrap" fxLayoutAlign="center">
+        <mat-card fxFlex="500px" *ngFor="let order of data">
+            <mat-card-content fxLayoutAlign="center">
+                <h3>City: {{order.city}}</h3>
+            </mat-card-content>
+            <mat-card-content fxLayoutAlign="center">
+                <h3>Address: {{order.address}}</h3>
+            </mat-card-content>
+            <mat-card-content fxLayoutAlign="center">
+                <h3>payment: {{order.payment}}</h3>
+            </mat-card-content>
+
+            <mat-card-content fxLayoutAlign="center">
+                <h3>Price: {{order.price}} Euro</h3>
+            </mat-card-content>
+
+            <mat-card-content fxLayoutAlign="center center" fxLayout="column" *ngFor="let order of order.items">
+                <h4>Item:</h4>
+                <p>name: {{order.name}}</p>
+                <p>price: {{order.price}}</p>
+            </mat-card-content>
+
+            <mat-card-actions fxLayoutAlign="center">
+                <button mat-raised-button color="warn" (click)="deleteOrder(order.id)">Delete</button> 
+            </mat-card-actions>
+        </mat-card>
+    </section>
+</div>

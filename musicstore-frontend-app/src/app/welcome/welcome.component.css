@@ -1,0 +1,14 @@
+#main-div{
+    height: 90vh;
+}
+
+#second-div{
+    border-radius: 30px;
+    background-color: #33970f;
+}
+
+h1{
+    color: white;
+    font-size: 100px;
+    margin: 50px 0px;
+}

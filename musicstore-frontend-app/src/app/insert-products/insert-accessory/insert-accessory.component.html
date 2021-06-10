@@ -1,0 +1,45 @@
+<section>
+    <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px"
+    #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <mat-form-field>
+            <input type="text" ngModel matInput placeholder="Accessory" name="accessory"
+            required #accessoryInput="ngModel">
+            <mat-error *ngIf="accessoryInput.hasError('required')">Field should not be empty</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input type="text" ngModel matInput placeholder="Accessory name" name="name"
+            required #nameInput="ngModel">
+            <mat-error *ngIf="nameInput.hasError('required')">Field should not be empty</mat-error>
+        </mat-form-field>
+
+        <mat-form-field >
+            <input type="text" ngModel matInput placeholder="Accessory manufacturer" name="manufacturer"
+            required  #manufacturerInput="ngModel">
+            <mat-error *ngIf="manufacturerInput.hasError('required')">Field should not be empty</mat-error>
+        </mat-form-field>
+
+        <mat-form-field >
+            <input type="number" ngModel matInput placeholder="Accessory price" name="price"
+            required  #priceInput="ngModel">
+            <mat-error *ngIf="priceInput.hasError('required')">Field should not be empty</mat-error>
+        </mat-form-field>
+
+        <mat-form-field >
+            <textarea rows="8" type="text" ngModel matInput placeholder="Accessory description" name="desc"
+            required  #descInput="ngModel"></textarea>
+            <mat-error *ngIf="descInput.hasError('required')">Field should not be empty</mat-error>
+        </mat-form-field> 
+
+        <mat-form-field >
+            <input type="text" ngModel matInput placeholder="Accessory image" name="image"
+            required  #imageInput="ngModel">
+            <mat-error *ngIf="imageInput.hasError('required')">Field should not be empty</mat-error>
+        </mat-form-field>
+
+        {{message || ""}}
+
+        <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Submit</button>
+    </form>
+</section>
+
